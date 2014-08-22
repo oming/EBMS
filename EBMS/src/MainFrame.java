@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 
 public class MainFrame {
@@ -55,6 +57,14 @@ public class MainFrame {
 		
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
+		
+		JMenuItem mntmAbout = new JMenuItem("About");
+		mntmAbout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			About af = new About();
+			}
+		});
+		mnHelp.add(mntmAbout);
 		frmEbms.getContentPane().setLayout(new BorderLayout(0, 0));
 		
 		JPanel panelFrame = new JPanel();
