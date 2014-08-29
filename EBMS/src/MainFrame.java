@@ -1,18 +1,18 @@
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
 import java.awt.BorderLayout;
-import javax.swing.JPanel;
-import java.awt.FlowLayout;
-import javax.swing.JLabel;
+import java.awt.Dimension;
 import java.awt.GridLayout;
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
-import java.awt.event.ActionListener;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 
 public class MainFrame {
@@ -36,6 +36,13 @@ public class MainFrame {
 		frmEbms.setTitle("EBMS");
 		frmEbms.setBounds(100, 100, 800, 600);
 		frmEbms.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		/* 화면을 중앙으로 정렬 */
+		Dimension frameSize = frmEbms.getSize();
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+		frmEbms.setLocation((screenSize.width - frameSize.width) / 2, (screenSize.height - frameSize.height) / 2);
+
+		
 		
 		JMenuBar menuBar = new JMenuBar();
 		frmEbms.setJMenuBar(menuBar);
